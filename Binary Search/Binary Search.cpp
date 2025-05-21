@@ -7,7 +7,7 @@ public:
         int high = nums.size()-1;
         while(low<=high)
         {
-            mid = (low+high-low)/2;//OVERFLOW PREVENTING
+            mid = low+(high-low)/2;//OVERFLOW PREVENTING
             if(target==nums[mid])
                 return mid;
             
