@@ -1,0 +1,5 @@
+Use case	Operator to use	Reason
+Next Greater	<	Keep duplicates, don’t pop them
+Previous Greater	<=	Pop equal values to prevent overcounting
+Next Smaller	>	Don’t pop equals, treat each index separately
+Previous Smaller	>=	Pop equals to avoid overlapping ranges
