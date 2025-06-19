@@ -1,3 +1,5 @@
+MAIN LOGIC 
+
 class Solution {
 public:
     string removeKdigits(string s, int k) {
