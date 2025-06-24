@@ -18,4 +18,4 @@ node* deletetail(node* head){
     
 }
 
-Tc->O(n)
+Tc->O(n-1)
