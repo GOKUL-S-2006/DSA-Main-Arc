@@ -11,7 +11,6 @@ struct node{
         next=nullptr;
     }
 };
-
 int main() {
     
     vector<int> arr={10,20,30,40,50};
@@ -26,7 +25,13 @@ int main() {
         temp=temp->next;
     }  
     
-   
+    temp=head;
+    
+    while(temp!=NULL){
+        cout<<temp->data<<endl;
+        temp=temp->next;
+    }
+    
 
     return 0;
 }
