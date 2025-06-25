@@ -46,6 +46,7 @@ Key idea:
       ->First Reverse a Given Linkedlist
       ->start calulating and multiply each number by 2 if the number exceeds 9 which means greater than 9 you should store unit digit in new node and remaining in the carry everytime don'tforget to add the carry with your sum
       ->At last if there is ant carry add them up in a new Node attach it in last node
+      ->Finally Don't forget to reverse a Answer Linkedlist because we reversed the original likedlist to calculate
 
 class Solution {
 public:
