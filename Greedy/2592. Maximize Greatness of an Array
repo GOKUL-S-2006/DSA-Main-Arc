@@ -1,0 +1,31 @@
+class Solution {
+public:
+    //for every element element we are checking the next greater element to assign that's why we are two pointer here
+    //if there is a next greater element for the current element move the l++;
+    //if if not move l1++ to check the next greater element to assign
+    int maximizeGreatness(vector<int>& nums) {
+
+        int n=nums.size();
+
+        //sort the given array
+        sort(nums.begin(),nums.end());
+
+        int l=0,l1=0;
+
+        int maxi=0;
+
+       //use two pointer
+       //Assign every element the next bigger unused element as many times as possible.
+        while(l1<n){
+          if(nums[l]<nums[l1]){
+            maxi++;
+            l++;
+          }
+          l1++;
+        }
+        
+        return maxi;
+        
+    }
+    //TC->O(NLOGN)+O(N)
+};
