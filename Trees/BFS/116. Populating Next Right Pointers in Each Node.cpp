@@ -68,9 +68,6 @@ TC:O(N)
 SC:O(N)
 APPROACH 2:(Using O(1) Space)
 
-untime Error
-Line 30: Char 28: runtime error: member access within null pointer of type 'Node' (solution.cpp)
-SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior prog_joined.cpp:57:28
 
 
 /*
