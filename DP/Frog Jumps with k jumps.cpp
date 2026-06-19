@@ -1,32 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int f(int i, vector<int>& height) {
+int f(int i, vector<int>& height, int k) {
     if (i == 0) return 0;
 
-    int jump1 = f(i - 1, height) + abs(height[i] - height[i - 1]);
+    int minv = INT_MAX;
 
-    int jump2 = INT_MAX;
-    if (i > 1)
-        jump2 = f(i - 2, height) + abs(height[i] - height[i - 2]);
+    for (int j = 1; j <= k; j++) {
+        if (i - j >= 0) {
+            int jump = f(i - j, height, k) + abs(height[i] - height[i - j]);
+            minv = min(minv, jump);
+        }
+    }
 
-    return min(jump1, jump2);
+    return minv;
 }
 
 int main() {
-    int n;
-    cin >> n;  // number of stones
+    int n, k;
+    cin >> n >> k;
 
     vector<int> height(n);
     for (int i = 0; i < n; i++) {
         cin >> height[i];
     }
 
-    cout << f(n - 1, height) << endl;
+    cout << f(n - 1, height, k) << endl;
 
     return 0;
 }
-
 
 Memoization(DP)
 
