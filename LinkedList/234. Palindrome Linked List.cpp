@@ -31,3 +31,65 @@ Brute Force:
 }
 TC->O(3N)
 SC->O(N)
+
+
+ /*
+class Node {
+  public:
+    int data;
+    Node *next;
+
+    Node(int x) {
+       data = x;
+       next = nullptr;
+    }
+};*/
+
+class Solution {
+  public:
+    bool isPalindrome(Node *head) {
+        //  code here
+        if (head == nullptr || head->next == nullptr)
+                return true;
+
+            // Find middle
+            Node* slow = head;
+            Node* fast = head;
+
+            while (fast != nullptr && fast->next != nullptr) {
+                slow = slow->next;
+                fast = fast->next->next;
+            }
+
+            // Reverse second half
+            Node* prev = nullptr;
+            Node* curr = slow;
+
+            while (curr != nullptr) {
+                Node* next = curr->next;
+                curr->next = prev;
+                prev = curr;
+                curr = next;
+            }
+
+            // Compare first half and reversed second half
+            Node* first = head;
+            Node* second = prev;
+
+            while (second != nullptr) {
+                if (first->data != second->data)
+                    return false;
+
+                first = first->next;
+                second = second->next;
+            }
+
+            return true;
+        
+        
+    }
+};
+
+
+Time: O(n)
+Space: O(1) extra space
